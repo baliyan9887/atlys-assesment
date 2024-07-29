@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #c6c7ca;
+  background-color: #131319;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .gradient-border {
+    @apply relative p-1 rounded-md;
+    background: linear-gradient(to right, #969696, #343434);
+  }
+
+  .gradient-border::before {
+    @apply absolute inset-0 bg-background-light rounded-md;
+    content: "";
+  }
+
+  .gradient-border-content {
+    @apply relative bg-background-light rounded-md p-6;
+    z-index: 10;
+  }
+}
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
